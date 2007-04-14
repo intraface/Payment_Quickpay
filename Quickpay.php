@@ -6,15 +6,16 @@
  * this API if implementing QuickPay in a PHP enviroment. Requires
  * PHP to be compiled with CURL and XML support.
  *
- * Changelog
+ * Changelog:
  * 2006-01-10 Added function set_curl_certificate() (lo)
  *
  * @package  QuickPay
+ * @author   ta pil.dk
+ * @since    0.1.0
  * @author   Lars Olesen <lars@intraface.dk>
  * @since    1.18.1
  * @tutorial http://quickpay.dk/dk/vejledninger/integration/api-protokol/php.html
  *
- * $Id: quickpay.phps,v 1.17 2005/12/14 19:16:58 ta Exp $
  */
 
 /*
