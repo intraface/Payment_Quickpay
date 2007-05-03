@@ -16,6 +16,7 @@
  * @since    1.18.1
  * @tutorial http://quickpay.dk/dk/vejledninger/integration/api-protokol/php.html
  *
+ * Look here to make it perfect http://trac.symfony-project.com/trac/browser/plugins/sfAuthorizeNetPlugin/lib/sfAuthorizeNet.class.php
  */
 
 /*

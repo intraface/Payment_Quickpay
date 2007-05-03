@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.5.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Quickpay</name>
+ <uri>http://localhost/</uri>
+ <summary>Communicates with Quickpay</summary>
+ <description>Needs to be filled in</description>
+ <lead>
+  <name>Lars Olesen</name>
+  <user>lars</user>
+  <email>lars@legestue.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2007-04-14</date>
+ <time>23:59:20</time>
+ <version>
+  <release>1.17.1</release>
+  <api>1.17.1</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD license</license>
+ <notes>Needs to be filled in</notes>
+ <contents>
+  <dir baseinstalldir="Quickpay" name="/">
+   <file name="Quickpay.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.5.0</min>
+   </pearinstaller>
+   <extension>
+    <name>curl</name>
+   </extension>
+   <extension>
+    <name>xml</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.17.1</release>
+    <api>1.17.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>beta</api>
+   </stability>
+   <date>2007-04-14</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD license</license>
+   <notes>Needs to be filled in</notes>
+  </release>
+ </changelog>
+</package>
