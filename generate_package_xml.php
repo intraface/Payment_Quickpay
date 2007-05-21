@@ -13,21 +13,21 @@ PEAR::setErrorHandling(PEAR_ERROR_DIE);
 $pfm = new PEAR_PackageFileManager2();
 $pfm->setOptions(
     array(
-        'baseinstalldir'    => 'Quickpay',
+        'baseinstalldir'    => 'Payment',
         'filelistgenerator' => 'file',
         'packagedirectory'  => dirname(__FILE__),
         'packagefile'       => 'package.xml',
         'ignore'            => array(
-			'generate_package_xml.php',
-			'package.xml',
-			'*.tgz'
-			),
-		'exceptions'        => array(),
+            'generate_package_xml.php',
+            'package.xml',
+            '*.tgz'
+            ),
+        'exceptions'        => array(),
         'simpleoutput'      => true,
-	)
+    )
 );
 
-$pfm->setPackage('Quickpay');
+$pfm->setPackage('Payment_Quickpay');
 $pfm->setSummary('Communicates with Quickpay');
 $pfm->setDescription('Needs to be filled in');
 $pfm->setUri('http://localhost/');
@@ -54,10 +54,10 @@ $pfm->addExtensionDep('required', 'xml');
 $pfm->generateContents();
 
 if (isset($_GET['make']) || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'make')) {
-	echo 'write package file';
+    echo 'write package file';
     $pfm->writePackageFile();
 } else {
-	echo 'debug package file';
+    echo 'debug package file';
     $pfm->debugPackageFile();
 }
 ?>
