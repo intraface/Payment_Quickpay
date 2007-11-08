@@ -9,17 +9,21 @@
  */
 
 require_once 'PEAR/PackageFileManager2.php';
+
+$version = '1.18.2';
+$notes = 'Initial release as a public PEAR package.';
+$stability = 'alpha';
+
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 $pfm = new PEAR_PackageFileManager2();
 $pfm->setOptions(
     array(
-        'baseinstalldir'    => 'Payment',
+        'baseinstalldir'    => '/',
         'filelistgenerator' => 'file',
-        'packagedirectory'  => dirname(__FILE__),
+        'packagedirectory'  => dirname(__FILE__) . '/src/',
         'packagefile'       => 'package.xml',
         'ignore'            => array(
             'generate_package_xml.php',
-            'package.xml',
             '*.tgz'
             ),
         'exceptions'        => array(),
@@ -29,18 +33,18 @@ $pfm->setOptions(
 
 $pfm->setPackage('Payment_Quickpay');
 $pfm->setSummary('Communicates with Quickpay');
-$pfm->setDescription('Needs to be filled in');
-$pfm->setUri('http://localhost/');
+$pfm->setDescription('API for communicating with the QuickPay api');
+$pfm->setChannel('public.intraface.dk');
 $pfm->setLicense('BSD license', 'http://www.opensource.org/licenses/bsd-license.php');
-$pfm->addMaintainer('lead', 'lars', 'Lars Olesen', 'lars@legestue.net');
+$pfm->addMaintainer('lead', 'lsolesen', 'Lars Olesen', 'lars@legestue.net');
 
 $pfm->setPackageType('php');
 
-$pfm->setAPIVersion('1.18.1');
-$pfm->setReleaseVersion('1.18.1');
-$pfm->setAPIStability('beta');
-$pfm->setReleaseStability('stable');
-$pfm->setNotes('Needs to be filled in');
+$pfm->setAPIVersion($version);
+$pfm->setReleaseVersion($version);
+$pfm->setAPIStability($stability);
+$pfm->setReleaseStability($stability);
+$pfm->setNotes($notes);
 $pfm->addRelease();
 
 $pfm->addGlobalReplacement('package-info', '@package-version@', 'version');
@@ -54,10 +58,10 @@ $pfm->addExtensionDep('required', 'xml');
 $pfm->generateContents();
 
 if (isset($_GET['make']) || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'make')) {
-    echo 'write package file';
-    $pfm->writePackageFile();
+    if ($pfm->writePackageFile()) {
+        exit('file written');
+    }
 } else {
-    echo 'debug package file';
     $pfm->debugPackageFile();
 }
 ?>

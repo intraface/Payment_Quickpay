@@ -2,6 +2,8 @@
 /**
  * QuickPay API PHP4 og PHP5
  *
+ * PHP version 4 and 5
+ *
  * This API is used to interact with QuickPay payment gateway. Use
  * this API if implementing QuickPay in a PHP enviroment. Requires
  * PHP to be compiled with CURL and XML support.
@@ -9,7 +11,7 @@
  * Changelog:
  * 2006-01-10 Added function set_curl_certificate() (lo)
  *
- * @package  QuickPay
+ * @package  Payment_QuickPay
  * @author   ta pil.dk
  * @since    0.1.0
  * @author   Lars Olesen <lars@intraface.dk>
@@ -391,7 +393,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
         $response = curl_exec($ch);
@@ -424,7 +426,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
         $response = curl_exec($ch);
@@ -454,7 +456,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
 
@@ -486,7 +488,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
 
@@ -517,7 +519,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
         $response = curl_exec($ch);
@@ -545,7 +547,7 @@ class quickpay {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
         if (!empty($this->curl_certificate)) {
-			curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
+            curl_setopt($ch, CURLOPT_CAINFO, $this->curl_certificate);
         }
 
         $response = curl_exec($ch);
@@ -889,9 +891,9 @@ class quickpay {
     * @return void - triggers error if not exist
     */
     function set_curl_certificate($location) {
-    	if (!file_exists($location)) {
-    		trigger_error('certificate does not exist');
-    	}
+        if (!file_exists($location)) {
+            trigger_error('certificate does not exist');
+        }
         $this->curl_certificate = $location;
     }
 
