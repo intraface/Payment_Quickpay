@@ -892,7 +892,7 @@ class quickpay {
     */
     function set_curl_certificate($location) {
         if (!file_exists($location)) {
-            trigger_error('certificate does not exist');
+            trigger_error('certificate does not exist', E_USER_ERROR);
         }
         $this->curl_certificate = $location;
     }
