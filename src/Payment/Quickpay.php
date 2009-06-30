@@ -612,7 +612,7 @@ class quickpay {
     */
     function parse($xmlstring="") {
         // set up a new XML parser to do all the work for us
-        $this->parser = xml_parser_create();
+        $this->parser = xml_parser_create('iso-8859-1');
         xml_set_object($this->parser, $this);
         xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, false);
         xml_set_element_handler($this->parser, "startElement", "endElement");
