@@ -23,8 +23,8 @@
     </target>
 
     <target name="export">
-        <echo msg="Exporting SVN files" />
-        <exec command="svn export ${source.dir}/src ${build.dir}/temp" />
+        <echo msg="Cloning from git repository" />
+        <exec command="git clone git://github.com/intraface/Quickpay.git ${build.dir}/temp" />
         <mkdir dir="${build.dir}/package/${package-name}-${version}" />
         <copy todir="${build.dir}/package/${package-name}-${version}">
             <filterchain>
@@ -32,7 +32,7 @@
                     <token key="VERSION" value="${version}" />
                 </replacetokens>
             </filterchain>
-            <fileset dir="${build.dir}/temp">
+            <fileset dir="${build.dir}/temp/src">
                 <include name="**" />
             </fileset>
         </copy>
